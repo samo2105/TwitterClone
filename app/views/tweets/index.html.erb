@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Tweets</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+
+      <tr>
+        <td><%= tweet.Title %></td>
+        <td><%= tweet.content %></td>
+        <td><%= link_to 'Mostrar', tweet %></td>
+        <td><%= link_to 'Editar', edit_tweet_path(tweet) %></td>
+        <td><%= link_to 'Eliminar', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
+</div>
