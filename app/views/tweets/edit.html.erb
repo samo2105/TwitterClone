@@ -1,6 +1,11 @@
-<h1>Editing Tweet</h1>
 
+<br>
+<h1 class="card text-center bg-info text-white">Editing Tweet</h1>
+<br>
 <%= render 'form', tweet: @tweet %>
+<br>
+<%= link_to 'Back', root_path, class:'btn btn-primary col-sm-4' %>
 
-<%= link_to 'Show', @tweet %> |
-<%= link_to 'Back', tweets_path %>
+<div class="d-inline">
+<%= link_to 'Show', @tweet, class:'btn btn-warning col-sm-4 float-right' %>
+</div>

@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<br>
+<div class="text-center">
+<h1 class="card bg-info text-white">My Tweet</h1>
+<br>
+<div class="card bg-info container text-center">
+<br>
+  <p class="text-white">Title:</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tweet.Title %>
-</p>
+  <div class="card bg-muted text-secondary mr-5 ml-5"><%= @tweet.Title %></div>
+  <br>
+  <p class="text-white">Content:</p>
+  <div class="card bg-muted text-secondary mr-5 ml-5"><%= @tweet.content %></div>
+  <br>
+</div>
+<br>
+<%= link_to 'Back', root_path, class:'btn btn-primary col-sm-4 float-left' %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @tweet.content %>
-</p>
+<%= link_to 'Edit', edit_tweet_path(@tweet), class:'btn btn-warning col-sm-4 float-right' %>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+</div>

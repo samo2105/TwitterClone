@@ -1,3 +1,6 @@
+
+  <div class="card bg-info text-white container text-center">
+    <br>
 <%= form_with(model: tweet, local: true) do |form| %>
   <% if tweet.errors.any? %>
     <div id="error_explanation">
@@ -10,20 +13,24 @@
       </ul>
     </div>
   <% end %>
-
+<!-- hola -->
   <div class="field">
-    <%= form.label :Title, class: 'col-sm-1' %>
-    <%= form.text_field :Title %>
+    <%= form.label :Title %>
+    <br>
+    <%= form.text_field :Title, class:'col-sm-10'  %>
   </div>
-
-  <div class="field">
+<br>
+  <div class="field ">
     <%= form.label :content, class: 'col-sm-1' %>
-    <%= form.text_field :content %>
+    <br>
+    <%= form.text_area :content, rows:4, cols:97%>
   </div>
 
 
-
-  <div class="actions">
-    <%= form.submit %>
+<br>
+  <div class="actions text-center">
+    <%= form.submit 'Submit Tweet', class:'btn btn-primary' %>
   </div>
+      <br>
 <% end %>
+  </div>
