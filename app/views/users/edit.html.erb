@@ -1,6 +1,9 @@
-<h1>Editing User</h1>
-
+<br>
+<h1 class="card text-center bg-info text-white">Editing User</h1>
+<br>
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back',if current_user != nil then tweets_path else root_path end %>
+<%= link_to 'Back',if current_user != nil then tweets_path else root_path end, class:'btn btn-primary col-sm-4' %>
+<p></p>
+<%= link_to 'Profile', @user, class:'btn btn-primary col-sm-4 float-right' %>
+

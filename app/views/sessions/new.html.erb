@@ -1,15 +1,21 @@
-<p id=”alert”><%= alert %></p>
-<h1>Login</h1>
+<br>
+<h1 class="card text-white text-center bg-info">Login</h1>
+<br>
+<div class="card pt-2 pb-2 bg-info text-white container">
 <%= form_tag sessions_path do |form| %>
   <div class=”field”>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= label_tag :email, 'Email', class:'col-sm-3' %>
+    <%= text_field_tag :email,nil, class:'col-sm-7' %>
   </div>
   <div class=”field”>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= label_tag :password, 'Password', class:'col-sm-3' %>
+    <%= password_field_tag :password, nil, class:'col-sm-7' %>
   </div>
+    <br>
   <div class="actions">
-    <%= submit_tag "login" %>
+    <%= submit_tag "Login", class:'btn btn-primary container' %>
   </div>
 <% end %>
+</div>
+<br>
+<p id=”alert” class="card bg-warning container"><%= alert %></p>
