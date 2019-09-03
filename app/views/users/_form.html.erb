@@ -1,0 +1,70 @@
+<div class="row">
+<div class="column col-sm-7">
+<div class="card bg-info container pt-2 text-white pb-2">
+
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstname, class:'col-sm-3'%>
+    <%= form.text_field :firstname, class:'col-sm-7' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname, class:'col-sm-3' %>
+    <%= form.text_field :lastname, class:'col-sm-7' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alias, class:'col-sm-3' %>
+    <%= form.text_field :alias, class:'col-sm-7' %>
+  </div>
+
+    <div class="field">
+      <%= form.label :image, class:'col-sm-3' %>
+      <%= form.text_field :image, class:'col-sm-7' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :caption, class:'col-sm-3' %>
+      <%= form.text_field :caption, class:'col-sm-7' %>
+    </div>
+
+  <div class="field">
+    <%= form.label :email, class:'col-sm-3' %>
+    <%= form.text_field :email, class:'col-sm-7' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password, class:'col-sm-3' %>
+    <%= form.password_field :password, class:'col-sm-7' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation, class:'col-sm-3'%>
+    <%= form.password_field :password_confirmation, class:'col-sm-7' %>
+  </div>
+<br>
+    <div class="actions">
+      <%= form.submit 'Create User', class:'btn btn-primary text-center col-sm-12 d-inline' %>
+    </div>
+    </div>
+    <br>
+<% end %>
+
+</div>
+
+<div class="column col-sm-3">
+<img class="img-log" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2evBO1z-YxMXy5zXfbN4y2ZXYKuAP9BagEvEtIyvE3cgdaBfj">
+</div>
+</div>

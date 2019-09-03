@@ -1,8 +1,27 @@
 <br>
+<div class="row">
+<div class="column col-sm-3">
+  <div class="card" >
+    <img src="<%= current_user.image if current_user != nil %> " class= "card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= (current_user.firstname if current_user != nil) %></h5>
+      <p class="card-text"><%=current_user.caption if current_user != nil %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">@<%= current_user.alias if current_user != nil  %> </li>
+      <li class="list-group-item"><%= current_user.email if current_user != nil %></li>
+      <li class="list-group-item">110 Tweets</li>
+    </ul>
+    <div class="card-body">
+      <%= (link_to 'Profile', current_user, class:"card-link btn btn-primary" if current_user != nil) %>
+      <%= (link_to 'Edit Profile', edit_user_path(current_user), class:"card-link btn btn-primary" ) if current_user != nil %>
+    </div>
+  </div>
+</div>
+<div class="column col-sm-7 ">
 <h1 class="card text-center bg-info text-white">Tweets</h1>
   <br>
     <% @tweets.reverse_each do |tweet| %>
-
     <div class="card">
       <div class="card-header bg-info text-white pb-0 pt-1">
         <h3 class="d-inline"><%= tweet.Title %></h3>
@@ -31,4 +50,5 @@
     <br>
 
     <% end %>
-
+</div>
+</div>

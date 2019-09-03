@@ -1,0 +1,6 @@
+<h1>Editing User</h1>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back',if current_user != nil then tweets_path else root_path end %>

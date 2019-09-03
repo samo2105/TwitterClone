@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_145458) do
+ActiveRecord::Schema.define(version: 2019_09_03_140305) do
 
   create_table "tweets", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "Title"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "alias"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "caption"
+    t.string "image"
+    t.index ["alias"], name: "index_users_on_alias", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
